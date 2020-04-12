@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:english_words/english_words.dart';
 import 'package:flutter/widgets.dart';
@@ -35,6 +36,15 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+  static var steps = [
+    "Pack-a-Punch",
+    "Clocls",
+    "Elementals",
+    "Planets",
+    "Ice Barrier",
+    "Final Boss"
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -64,12 +74,49 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
           ),
+          //GridView.count(
+          //primary: false,
+          //crossAxisSpacing: 10,
+          //mainAxisSpacing: 10,
+          //crossAxisCount: 2,
+          //children: <Widget>[
+          //Container(
+          //padding: EdgeInsets.all(8),
+          //child: Text('Pack-a-Punch'),
+          //color: Colors.lightGreen,
+          //),
+          //Container(
+          //padding: EdgeInsets.all(8),
+          //child: Text('Clocks'),
+          //color: Colors.lightGreen,
+          //),
+          //Container(
+          //padding: EdgeInsets.all(8),
+          //child: Text('Elementals'),
+          //color: Colors.lightGreen,
+          //),
+          //Container(
+          //padding: EdgeInsets.all(8),
+          //child: Text('Planets'),
+          //color: Colors.lightGreen,
+          //),
+          //Container(
+          //padding: EdgeInsets.all(8),
+          //child: Text('Ice Barriers'),
+          //color: Colors.lightGreen,
+          //),
+          //Container(
+          //padding: EdgeInsets.all(8),
+          //child: Text('Final Boss'),
+          //color: Colors.lightGreen,
+          //),
+          //],
+          //)
           RaisedButton(
             onPressed: () => {
               Navigator.push(context,
                   MaterialPageRoute(builder: (context) => PackAPunch()))
             },
-            child: Text("Pack-A-Punch"),
           )
         ]),
       ),
