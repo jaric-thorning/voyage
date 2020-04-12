@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:english_words/english_words.dart';
+import 'package:flutter/widgets.dart';
 import 'package:sticky_headers/sticky_headers.dart';
 import 'package:voyage/pack-a-punch.dart';
-
 
 void main() => runApp(MyApp());
 
@@ -28,7 +28,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
   int _counter = 0;
   void _incrementCounter() {
     setState(() {
@@ -40,7 +39,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-      leading: IconButton(
+        leading: IconButton(
           icon: Icon(Icons.menu),
           onPressed: _menu,
         ),
@@ -51,13 +50,12 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       backgroundColor: Colors.grey[800],
       body: Center(
-      child: Column( children: <Widget>[
-        Container(
-          margin: EdgeInsets.only(bottom: 480),
-          padding: EdgeInsets.only(right: 70, left: 70, bottom: 15, top: 15),
-          color: Colors.white,
-          child:
-            Text(
+        child: Column(children: <Widget>[
+          Container(
+            margin: EdgeInsets.only(top: 20),
+            padding: EdgeInsets.only(right: 70, left: 70, bottom: 15, top: 15),
+            color: Colors.white,
+            child: Text(
               'Walkthrough Guide',
               style: TextStyle(
                 fontWeight: FontWeight.w500,
@@ -66,17 +64,14 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
           ),
-        RaisedButton(
-          onPressed: () => {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => PackAPunch())
-            )
-          },
-          child: Text("Pack-A-Punch"),
-
-        )]
-        ),
+          RaisedButton(
+            onPressed: () => {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => PackAPunch()))
+            },
+            child: Text("Pack-A-Punch"),
+          )
+        ]),
       ),
     );
   }
