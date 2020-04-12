@@ -67,10 +67,13 @@ class _MyHomePageState extends State<MyHomePage> {
     // than having to individually change instances of widgets.
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(icon: Icon(Icons.dehaze), onPressed: _pushSaved),
+        leading: IconButton(icon: Icon(Icons.menu), onPressed: _menu),
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
+        actions: <Widget>[
+          IconButton(icon: Icon(Icons.more_vert), onPressed: _settings)
+        ],
       ),
       body: Center(
         // Center is a layout widget. It takes a single child and positions it
@@ -102,13 +105,10 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+// This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 
-  void _pushSaved() {}
+  void _menu() {}
+  void _settings() {}
 }
