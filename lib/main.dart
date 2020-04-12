@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:english_words/english_words.dart';
+import 'package:sticky_headers/sticky_headers.dart';
+
 
 void main() => runApp(MyApp());
 
@@ -8,8 +11,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Voyage',
-      theme: ThemeData(primaryColor: Colors.grey[850]
-          ),
+      theme: ThemeData(primaryColor: Colors.grey[850]),
       home: MyHomePage(title: 'Voyage'),
     );
   }
@@ -25,8 +27,8 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
 
+  int _counter = 0;
   void _incrementCounter() {
     setState(() {
       _counter++;
@@ -37,24 +39,29 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(icon: Icon(Icons.menu), onPressed: _menu),
+      leading: IconButton(
+          icon: Icon(Icons.menu),
+          onPressed: _menu,
+        ),
         title: Text(widget.title),
         actions: <Widget>[
           IconButton(icon: Icon(Icons.more_vert), onPressed: _settings)
         ],
       ),
+      backgroundColor: Colors.grey[800],
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'You have pushed the voygage button this many times:',
+      child: Container(
+          margin: EdgeInsets.only(bottom: 480),
+          padding: EdgeInsets.only(right: 70, left: 70, bottom: 15, top: 15),
+          color: Colors.white,
+          child: Text(
+            'Walkthrough Guide',
+            style: TextStyle(
+              fontWeight: FontWeight.w500,
+              color: Colors.grey[700],
+              fontSize: 25,
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.display1,
-            ),
-          ],
+          ),
         ),
       ),
     );
