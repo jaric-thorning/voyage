@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:english_words/english_words.dart';
 import 'package:sticky_headers/sticky_headers.dart';
+import 'package:voyage/pack-a-punch.dart';
 
 
 void main() => runApp(MyApp());
@@ -50,18 +51,31 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       backgroundColor: Colors.grey[800],
       body: Center(
-      child: Container(
+      child: Column( children: <Widget>[
+        Container(
           margin: EdgeInsets.only(bottom: 480),
           padding: EdgeInsets.only(right: 70, left: 70, bottom: 15, top: 15),
           color: Colors.white,
-          child: Text(
-            'Walkthrough Guide',
-            style: TextStyle(
-              fontWeight: FontWeight.w500,
-              color: Colors.grey[700],
-              fontSize: 25,
+          child:
+            Text(
+              'Walkthrough Guide',
+              style: TextStyle(
+                fontWeight: FontWeight.w500,
+                color: Colors.grey[700],
+                fontSize: 25,
+              ),
             ),
           ),
+        RaisedButton(
+          onPressed: () => {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => PackAPunch())
+            )
+          },
+          child: Text("Pack-A-Punch"),
+
+        )]
         ),
       ),
     );
