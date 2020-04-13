@@ -4,6 +4,7 @@ import 'package:english_words/english_words.dart';
 import 'package:flutter/widgets.dart';
 import 'package:sticky_headers/sticky_headers.dart';
 import 'package:voyage/pack-a-punch.dart';
+import 'package:voyage/guide.dart';
 
 void main() => runApp(MyApp());
 
@@ -82,6 +83,8 @@ class _MyHomePageState extends State<MyHomePage> {
                       title: Text("Guide"),
                       onTap: () {
                         Navigator.pop(context);
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) => Guide()));
                       },
                     ),
                     ListTile(
