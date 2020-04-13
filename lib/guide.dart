@@ -13,15 +13,24 @@ class Guide extends StatelessWidget{
 
   Card entry(String title, String desc, String assetImage){
     return Card(
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: <Widget>[ ListTile(
-        leading: CircleAvatar(
-          backgroundImage: AssetImage(assetImage), // no matter how big it is, it won't overflow
-        ),
-          title: Text(title, style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold), textAlign: TextAlign.left,),
+      child: InkWell(
+    splashColor: Colors.blue.withAlpha(30),
+    onTap: () {
+    print('Card tapped.');
+    },
+    child: Column(
+    mainAxisSize: MainAxisSize.min,
+    children: <Widget>[ Container(
+        height: 100,
+      alignment: Alignment.center,
+      child: ListTile(
+    leading: CircleAvatar(
+      radius: 30,
+      backgroundImage: AssetImage(assetImage), // no matter how big it is, it won't overflow
+      ),
+    title: Text(title, style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold), textAlign: TextAlign.left,),
 //          subtitle: Text(desc),
-        ),
+    ),
 //        ButtonBar(
 //          children: <Widget>[
 //            FlatButton(
@@ -30,7 +39,8 @@ class Guide extends StatelessWidget{
 //            ),
 //          ],
 //        )
-    ]));
+    )])));
+
   }
 
   @override
@@ -45,15 +55,13 @@ class Guide extends StatelessWidget{
           scrollDirection: Axis.vertical,
           child: Column(
            children: <Widget>[
-
-             headingText("Voyage of Despair Walkthrough"),
              entry("Retrieve the Sentinel Artifact", "","assets/images/sentinel-artifact.jpg" ),
              entry("Activate The Pack-a-Punch", "", "assets/images/pack-a-punch.jpg"),
-             entry("Finding The Clocks", "", "assets/images/voyage-of-despair.jpg"),
-             entry("Elemental Catalyst Challanges", "", "assets/images/voyage-of-despair.jpg"),
-             entry("Free Kracken", "", "assets/images/voyage-of-despair.jpg"),
-             entry("Upgrading the Kracken", "", "assets/images/voyage-of-despair.jpg"),
-             entry("Leaking Pipes", "", "assets/images/voyage-of-despair.jpg"),
+             entry("Find The Clocks", "", "assets/images/clock.jpg"),
+             entry("Kill the Elementals", "", "assets/images/elemental.jpg"),
+             entry("Get the Kracken", "", "assets/images/voyage-of-despair.jpg"),
+             entry("Upgrade the Kracken", "", "assets/images/kraken-upgrade.jpg"),
+             entry("Shoot the Leaking Pipes", "", "assets/images/leaking-pipes.jpg"),
            ],
       ))));
   }
