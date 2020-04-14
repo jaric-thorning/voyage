@@ -51,71 +51,57 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
-        actions: <Widget>[
-          IconButton(icon: Icon(Icons.more_vert), onPressed: _settings)
-        ],
       ),
       drawer: Drawer(
-        child: Column(
-          children: <Widget>[
-            Expanded(
-              child: ListView(
-              padding: EdgeInsets.zero,
-                  children: <Widget>[
-                    DrawerHeader(
-                    child: Text("Voyage of Despair", style: TextStyle(color: Colors.white, fontSize: 30)),
-                    decoration: BoxDecoration(
-                        image: DecorationImage(
-                            image: AssetImage("assets/images/voyage-of-despair.jpg"),
-                            fit: BoxFit.cover
-                        )
-                    ),
-                  ),
-                    ListTile(
-                      leading: Icon(Icons.map),
-                      title: Text("View Map"),
-                      onTap: () {
-                        Navigator.pop(context);
-                      },
-                    ),
-                    ListTile(
-                      leading: Icon(Icons.book),
-                      title: Text("Guide"),
-                      onTap: () {
-                        Navigator.pop(context);
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (context) => Guide()));
-                      },
-                    ),
-                    ListTile(
-                        leading: Icon(Icons.build),
-                        title: Text("Tools"),
-                        onTap: () {
-                          Navigator.pop(context);
-                        }
-                    )
-              ]
-              )
-      ),
-      Container(
-        child: Align(
+          child: Column(children: <Widget>[
+        Expanded(
+            child: ListView(padding: EdgeInsets.zero, children: <Widget>[
+          DrawerHeader(
+            child: Text("Voyage of Despair",
+                style: TextStyle(color: Colors.white, fontSize: 30)),
+            decoration: BoxDecoration(
+                image: DecorationImage(
+                    image: AssetImage("assets/images/voyage-of-despair.jpg"),
+                    fit: BoxFit.cover)),
+          ),
+          ListTile(
+            leading: Icon(Icons.map),
+            title: Text("View Map"),
+            onTap: () {
+              Navigator.pop(context);
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.book),
+            title: Text("Guide"),
+            onTap: () {
+              Navigator.pop(context);
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => Guide()));
+            },
+          ),
+          ListTile(
+              leading: Icon(Icons.build),
+              title: Text("Tools"),
+              onTap: () {
+                Navigator.pop(context);
+              })
+        ])),
+        Container(
+            child: Align(
           alignment: FractionalOffset.bottomCenter,
           child: Container(
-            child: Column(
-                children: <Widget>[
-                  ListTile(
-                      leading: Icon(Icons.settings),
-                      title: Text("Settings"),
-                      onTap: () {
-                        Navigator.pop(context);
-                      }
-                  )
-                ]
-            ),
-
+            child: Column(children: <Widget>[
+              ListTile(
+                  leading: Icon(Icons.settings),
+                  title: Text("Settings"),
+                  onTap: () {
+                    Navigator.pop(context);
+                  })
+            ]),
           ),
-          )
-        )])),
+        ))
+      ])),
       backgroundColor: Colors.grey[800],
       body: Center(
         child: Column(children: <Widget>[
@@ -180,7 +166,4 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
     );
   }
-
-  void _menu() {}
-  void _settings() {}
 }
