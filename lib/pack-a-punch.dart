@@ -52,7 +52,7 @@ class _PackAPunchPageState extends State<PackAPunchPage> {
                   crossAxisCount: 2,
                   crossAxisSpacing: 4.0,
                   mainAxisSpacing: 4.0),
-              itemBuilder: (BuildContext context, int index))
+              itemBuilder: (null))
         ])));
   }
 }
