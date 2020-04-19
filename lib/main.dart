@@ -76,7 +76,7 @@ class _MyHomePageState extends State<MyHomePage> {
             color: Colors.black,
           ),
           ListTile(
-              leading: Icon(Icons.build),
+              leading: Icon(Icons.access_time),
               title: Text("Clock Tracker"),
               onTap: () {
                 Navigator.pop(context);
