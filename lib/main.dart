@@ -5,6 +5,7 @@ import 'package:flutter/widgets.dart';
 import 'package:sticky_headers/sticky_headers.dart';
 import 'package:voyage/pack-a-punch.dart';
 import 'package:voyage/guide.dart';
+import 'package:voyage/tools/clock-tracker.dart';
 
 void main() => runApp(MyApp());
 
@@ -71,11 +72,16 @@ class _MyHomePageState extends State<MyHomePage> {
                   context, MaterialPageRoute(builder: (context) => Guide()));
             },
           ),
+          Divider(
+            color: Colors.black,
+          ),
           ListTile(
               leading: Icon(Icons.build),
-              title: Text("Tools"),
+              title: Text("Clock Tracker"),
               onTap: () {
                 Navigator.pop(context);
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => ClockTracker()));
               })
         ])),
         Container(
