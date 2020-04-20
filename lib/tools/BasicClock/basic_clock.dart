@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'basic_clock_painter.dart';
 
 class BasicClock extends StatefulWidget {
-  final DateTime datetime;
+  DateTime datetime;
   final bool showDigitalClock;
   final bool showTicks;
   final bool showNumbers;
@@ -25,7 +25,7 @@ class BasicClock extends StatefulWidget {
   final bool isUp;
   final bool isBar;
 
-  const BasicClock(
+  BasicClock(
       {this.datetime,
         this.showDigitalClock = true,
         this.showTicks = true,
@@ -49,7 +49,7 @@ class BasicClock extends StatefulWidget {
       : this.isLive = isLive ?? (datetime == null),
         super(key: key);
 
-  const BasicClock.dark(
+  BasicClock.dark(
       {datetime,
         showDigitalClock = true,
         showTicks = true,
@@ -80,6 +80,7 @@ class BasicClock extends StatefulWidget {
 
   @override
   _BasicClockState createState() => _BasicClockState(datetime);
+
 }
 
 class _BasicClockState extends State<BasicClock> {
@@ -108,6 +109,13 @@ class _BasicClockState extends State<BasicClock> {
 
   @override
   Widget build(BuildContext context) {
+    if(datetime != widget.datetime){
+      setState(() {
+        datetime = widget.datetime;
+      });
+    }
+
+    print("CLOCK REBUILDING - " + widget.datetime.toString() + " " + datetime.toString());
     return Container(
       width: widget.width,
       height: widget.height,

@@ -58,7 +58,8 @@ class BasicClockPainter extends CustomPainter {
 
   @override
   bool shouldRepaint(BasicClockPainter oldDelegate) {
-    return oldDelegate?.datetime?.isBefore(datetime) ?? true;
+    //return oldDelegate?.datetime?.isBefore(datetime) ?? true;
+    return true;
   }
 
   _paintPinHole(canvas, size, scaleFactor) {
