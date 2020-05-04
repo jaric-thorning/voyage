@@ -6,6 +6,7 @@ import 'package:sticky_headers/sticky_headers.dart';
 import 'package:voyage/pack-a-punch.dart';
 import 'package:voyage/guide.dart';
 import 'package:voyage/tools/clock-tracker.dart';
+import 'package:voyage/tools/elemental-tracker.dart';
 
 void main() => runApp(MyApp());
 
@@ -82,7 +83,16 @@ class _MyHomePageState extends State<MyHomePage> {
                 Navigator.pop(context);
                 Navigator.push(
                     context, MaterialPageRoute(builder: (context) => ClockTracker()));
-              })
+              }),
+              ListTile(
+                  leading: Icon(Icons.access_time),
+                  title: Text("Elemental Tracker"),
+                  onTap: () {
+                    Navigator.pop(context);
+                    Navigator.push(
+                        context, MaterialPageRoute(builder: (context) => ElementalTracker()));
+                  }
+              )
         ])),
         Container(
             child: Align(
